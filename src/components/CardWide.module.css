@@ -164,8 +164,8 @@
 @media (max-width: 991px) {
   .container {
     width: 100%;
-    flex-direction: column;
     height: auto;
+    min-height: 160px;
   }
 
   .content {
@@ -174,32 +174,55 @@
   }
 
   .imageContainer {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
   }
 
   .textContent {
     gap: 24px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .textWrapper {
+    min-width: 0;
+  }
+
+  .title,
+  .body {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 400px) {
   .container {
-    gap: 8px;
+    height: auto;
+    min-height: unset;
   }
 
   .content,
   .contentleft,
   .contentright {
     flex-direction: column;
+    align-items: center;
   }
 
   .imageContainer {
-    width: 100%;
-    height: 160px;
+    width: 140px;
+    height: 140px;
+    margin-bottom: 16px;
   }
 
   .textContent {
-    gap: 16px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .textWrapper {
+    align-items: center;
   }
 }

@@ -134,9 +134,17 @@
 }
 
 .cardGrid {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.cardGrid > * {
+  justify-self: center;
+  width: 240px;
+  height: 100%;
 }
 
 .wideCardGrid {
@@ -345,7 +353,14 @@
     width: 100%;
   }
 
-  .cardGrid,
+  .cardGrid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .cardGrid > * {
+    width: 200px;
+  }
+
   .wideCardGrid {
     flex-direction: column;
   }

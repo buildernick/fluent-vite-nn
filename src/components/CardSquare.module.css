@@ -1,11 +1,15 @@
 .cardBase {
-  flex: 1;
-  min-width: 240px;
+  width: 240px;
+  min-height: 240px;
+  height: 100%;
   background: #fff;
   border-radius: 4px;
   box-shadow:
     0px 2px 4px rgba(0, 0, 0, 0.14),
     0px 0px 2px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .darkCard {
@@ -45,26 +49,29 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  justify-content: center;
 }
 
 .cardImage {
-  width: 128px;
-  height: 128px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
   margin-bottom: 12px;
 }
 
 .cardTitle {
-  font-family:
-    "Open Sans",
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
-  font-size: 16px;
+  font-family: "Open Sans", -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
   font-weight: 600;
   color: #242424;
   margin-bottom: 8px;
+  width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .darkText {
@@ -76,15 +83,13 @@
 }
 
 .cardDescription {
-  font-family:
-    "Open Sans",
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
-  font-size: 16px;
+  font-family: "Open Sans", -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 12px;
   color: #424242;
-  line-height: 22px;
+  line-height: 16px;
+  width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .appIcon {
@@ -109,6 +114,33 @@
 
 @media (max-width: 991px) {
   .cardBase {
-    width: 100%;
+    width: 200px;
+    min-height: 200px;
+  }
+
+  .cardImage {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardBase {
+    width: 200px;
+    min-height: 200px;
+  }
+  
+  .cardImage {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .cardTitle {
+    font-size: 13px;
+  }
+  
+  .cardDescription {
+    font-size: 11px;
+    line-height: 15px;
   }
 }
